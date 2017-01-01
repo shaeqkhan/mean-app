@@ -1,4 +1,4 @@
-# MEAN Stack Practice
+# MEAN Stack - Practice
 | MEAN | Description |
 |------|-------------|
 | MongoDB | noSQL database, store json documents |
@@ -8,11 +8,17 @@
 
 ## Installation
 
-TODO: Describe the installation process
+| Tool | link |
+|------|-------------|
+| NodeJS | <https://nodejs.org/en/> |
+| MongoDB | <https://www.mongodb.com/> |
+
+Dependencies - nodemon, npm
 
 ## Usage
 
-TODO: Write usage instructions
+Start cmd terminal on root folder where package.json is present and type
+node app.js
 
 ## Contributing
 
@@ -22,14 +28,14 @@ TODO: Write usage instructions
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## History
-
-TODO: Write history
-
 ## Credits
 
-TODO: Write credits
+Udemy 
+
+Course link - <https://www.udemy.com/the-complete-javascript-developer-mean-stack-zero-to-hero/learn/v4/content>
+
+Trainers - https://www.udemy.com/user/fullstacktraining/
 
 ## License
 
-TODO: Write license
+Apache 2.0 <https://www.apache.org/licenses/LICENSE-2.0>
