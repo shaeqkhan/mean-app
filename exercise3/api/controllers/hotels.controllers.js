@@ -35,8 +35,8 @@ module.exports.hotelsGetOne = function(req, res) {
 		.findById(hotelId)
 		.exec(function(err, doc) {
 			res
-			.status(200)
-			.json(doc);
+				.status(200)
+				.json(doc);
 		});
 	
 };
