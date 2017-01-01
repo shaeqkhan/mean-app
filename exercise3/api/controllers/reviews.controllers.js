@@ -195,9 +195,7 @@ module.exports.reviewsDeleteOne = function(req, res) {
 					.json(response.message);
 			}
 			else {
-				thisReview.name = req.body.name;
-				thisReview.rating = parseInt(req.body.rating, 10);
-				thisReview.review = req.body.review;
+				hotel.reviews.id(reviewId).remove();
 				hotel.save(function(err, hotelUpdated) {
 					if(err) {
 						res
