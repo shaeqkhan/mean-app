@@ -1,5 +1,6 @@
 # MEAN Stack Practice
 | MEAN | Description |
+|------|-------------|
 | MongoDB | noSQL database, store json documents |
 | Express | web application framework, sits on top of node |
 | Angular | front end framework |
