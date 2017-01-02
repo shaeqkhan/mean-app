@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Angular Controllers</title>  
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script>
+    angular.module('myApp', []).controller('MyController', MyController);
+    function MyController($scope) {
+      $scope.name = 'Shaeq';
+      $scope.number = 0;
+      $scope.increment = function() {
+        $scope.number = $scope.number + 1;
+      }
+      $scope.decrement = function() {
+        $scope.number = $scope.number - 1;
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <div ng-controller="MyController">
+    Hello, {{ name }}
+    <p>Counter : {{ number }}</p>
+    <p>
+      <button ng-click="increment()">+1</button>
+      <button ng-click="decrement()">-1</button>
+    </p> 
+  </div>
+
+</body>
+</html>
