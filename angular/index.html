@@ -13,24 +13,62 @@
 <body ng-cloak>
 
   <div ng-init="rebels = [
-                  {name: 'Luke Skywalker', profession:'Jedi', weapon:'lightsaber', age:19},
-                  {name: 'Ben Kenobi', profession:'Jedi', weapon:'lightsaber', age:56},
-                  {name: 'Han Solo', profession:'Smuggler', weapon:'laser blaster', age:32},
-                  {name: 'Chewbacca', profession:'Pilot', weapon:'bowcaster', age:200}];">
+                  {name: 'Luke Skywalker', profession:'jedi', weapon:'lightsaber', age:19},
+                  {name: 'Ben Kenobi', profession:'jedi', weapon:'lightsaber', age:56},
+                  {name: 'Han Solo', profession:'smuggler', weapon:'laser blaster', age:32},
+                  {name: 'Chewbacca', profession:'pilot', weapon:'bowcaster', age:200}];">
 
     <select name="" id="" ng-model="rebel" 
                           ng-options="rebel.name group by rebel.weapon for rebel in rebels">
     </select>
     <p>You have selected: {{ rebel.name }}</p>
 
-    <p>List of rebels: </p>
+    <p>List of rebels (ordered by name)</p>
     <ul>
-      <li ng-repeat="rebel in rebels"> {{ rebel.name }} </li>
+      <li ng-repeat="rebel in rebels | orderBy: 'name'"> 
+        {{ rebel.name }} (age:{{ rebel.age }}) is a {{ rebel.profession }} fighting with a {{ rebel.weapon }}
+      </li>
+    </ul>
+
+    <p>List of rebels (ordered by profession then desc age)</p>
+    <ul>
+      <li ng-repeat="rebel in rebels | orderBy: ['profession', '-age']"> 
+        {{ rebel.name }} (age:{{ rebel.age }}) is a {{ rebel.profession }} fighting with a {{ rebel.weapon }}
+      </li>
+    </ul>
+
+    <p>List of rebels (filtered)</p>
+    <p>Name filter: <input type="text" ng-model="filterText.name"></p>
+    <p>Free text search: <input type="text" ng-model="filterText.$"></p>
+    <p>
+    <ul>
+      <li ng-repeat="rebel in rebels | filter: filterText"> 
+        {{ rebel.name }} (age:{{ rebel.age }}) is a {{ rebel.profession }} fighting with a {{ rebel.weapon }}
+      </li>
     </ul>
 
   </div>
 
-    
+  <div ng-init="amount = 1250.5050567">
+    <p>Built in directives</p>
+    <p>{{ amount | currency }}</p>
+    <p>{{ amount | number: 4 }}</p>
+  </div>
+
+  <div ng-init="string = 'star wars'">    
+    <p>{{ string | uppercase }}</p>
+  </div>
+
+  <div ng-init="myDate = 1399648945000">    
+    <p>{{ myDate | date }}</p>
+    <p>{{ myDate | date: 'medium' }}</p>
+    <p>{{ myDate | date: 'yyyy-MMMM-d (H:m)' }}</p>
+  </div>
+
+  <div ng-init="myArray = [0,1,2,3,4,5]">
+    <p> {{ myArray | limitTo: 4 }} </p>
+    <p> {{ myArray | limitTo: -2 }} </p>
+  </div>
   
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
 </body>
